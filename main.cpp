@@ -1,24 +1,24 @@
-#include <stddef.h>
 #include <iostream>
- using Size = ptrdiff_t;
-
- template <class Item, size_t n>
- constexpr auto x_items (Item (&) [n]) noexcept
- ->Size
- {return n;}
+#include <chrono>
 
 int main()
 {
-int const a[] = {1,6,8,3,7,2,5,2,56};
-Size const n  = x_items (a);
+     int* my_var = new int(32);
+     int* copy_myvar;
 
-std::cout << n << std::endl;
+    const int iters = 100000000;
+
+    auto start = std::chrono::high_resolution_clock::now();
+    for (int i = 0 ; i < iters ; ++i){
+        copy_myvar = my_var;
+    }
+
+    auto stop = std::chrono::high_resolution_clock::now();
+
+    auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop-start);
+
+    double av_dura = static_cast<double>(duration.count())/iters;
+    std::cout << av_dura << std::endl;
+
+    return 0;
 }
-
-
-
-
-
-
-
-
