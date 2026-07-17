@@ -19,6 +19,8 @@ int main()
 
     double av_dura = static_cast<double>(duration.count())/iters;
     std::cout << av_dura << std::endl;
+    /*  output = 0.3154ns on compilation with "-01"
+        2.5152ns withought optimization*/
 
     return 0;
 }
