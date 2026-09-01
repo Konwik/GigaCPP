@@ -1,3 +1,5 @@
+#prints current time using chrono
+
 #include <iostream>
 #include <chrono>
 #include <ctime>
