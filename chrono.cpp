@@ -1,4 +1,4 @@
-#prints current time using chrono
+//prints current time using chrono
 
 #include <iostream>
 #include <chrono>
